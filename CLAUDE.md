@@ -23,6 +23,15 @@ Claude Code iOS/Swift 开发插件。
 - 配置: `~/.claude/settings.json` → `enabledPlugins`
 - 格式: `"ios-swift-plugin@lazyman-ian": true`
 
+## Agent Frontmatter
+
+Valid fields:
+- `name`, `description` - required
+- `model` - `sonnet`, `opus`, `haiku` (NOT `inherit`)
+- `color` - optional
+
+**Invalid fields**: `tools: [...]` (not supported)
+
 ## Reference
 
 - dev-flow 插件作为模板参考: `lazyman-ian/dev-flow`
