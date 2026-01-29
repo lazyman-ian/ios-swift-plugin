@@ -39,20 +39,36 @@
 
 ### 安装
 
-```bash
-# 从 lazyman-ian marketplace 安装
-claude plugins add ios-swift-plugin@lazyman-ian
+**方式一：从 Marketplace 安装（推荐）**
 
-# 或本地开发
+```bash
+# 1. 添加 marketplace
+/plugin marketplace add lazyman-ian/claude-plugins
+
+# 2. 安装插件
+/plugin install ios-swift-plugin@lazyman-ian
+```
+
+**方式二：本地开发**
+
+```bash
+# 克隆仓库
 git clone https://github.com/lazyman-ian/ios-swift-plugin.git
-claude plugins add /path/to/ios-swift-plugin
+
+# 添加为本地 marketplace
+/plugin marketplace add ./ios-swift-plugin
+
+# 安装
+/plugin install ios-swift-plugin@ios-swift-plugin
 ```
 
 ### 验证安装
 
-在 Claude Code 中输入：
-
 ```bash
+# 查看已安装插件
+/plugin list
+
+# 测试 skill
 /ios-build-test
 ```
 

@@ -49,11 +49,20 @@
 
 ## Installation
 
-### From Marketplace
+### From Marketplace (Recommended)
 
 ```bash
-# Install from lazyman-ian marketplace
-claude plugins add ios-swift-plugin@lazyman-ian
+# Step 1: Add marketplace
+/plugin marketplace add lazyman-ian/claude-plugins
+
+# Step 2: Install plugin
+/plugin install ios-swift-plugin@lazyman-ian
+```
+
+Or in one command (CLI):
+
+```bash
+claude plugin install ios-swift-plugin@lazyman-ian
 ```
 
 ### From Local Directory
@@ -61,13 +70,21 @@ claude plugins add ios-swift-plugin@lazyman-ian
 ```bash
 # Clone and install locally
 git clone https://github.com/lazyman-ian/ios-swift-plugin.git
-claude plugins add /path/to/ios-swift-plugin
+
+# Add as local marketplace
+/plugin marketplace add ./ios-swift-plugin
+
+# Or install directly
+claude plugin install ./ios-swift-plugin
 ```
 
-### Verify
+### Verify Installation
 
 ```bash
-# Check available skills
+# List installed plugins
+/plugin list
+
+# Test a skill
 /ios-build-test
 ```
 
@@ -224,7 +241,11 @@ git clone https://github.com/lazyman-ian/ios-swift-plugin.git
 cd ios-swift-plugin
 
 # Test locally
-claude plugins add /path/to/ios-swift-plugin
+/plugin marketplace add ./ios-swift-plugin
+/plugin install ios-swift-plugin@ios-swift-plugin
+
+# Validate plugin structure
+/plugin validate .
 ```
 
 ### Ideas
