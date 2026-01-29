@@ -1,6 +1,6 @@
 # iOS Swift Plugin 完整指南
 
-> Claude Code iOS/Swift 开发工具包 | v1.0.0
+> Claude Code iOS/Swift 开发工具包 | v1.1.0
 
 ## 目录
 
@@ -402,7 +402,7 @@ Token 高效的构建和测试。
 /app-changelog
 
 # 指定起始 tag
-/app-changelog v1.0.0
+/app-changelog v1.1.0
 ```
 
 **输出示例**:
@@ -581,7 +581,7 @@ ios-swift-plugin 可以与 [dev-flow](https://github.com/lazyman-ian/dev-flow) �
 
 ## 更新日志
 
-### v1.0.0 (2025-01-29)
+### v1.1.0 (2025-01-29)
 
 - 初始版本
 - 10 个 Skills
