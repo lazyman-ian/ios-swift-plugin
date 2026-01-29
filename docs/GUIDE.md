@@ -42,24 +42,17 @@
 **方式一：从 Marketplace 安装（推荐）**
 
 ```bash
-# 1. 添加 marketplace
-/plugin marketplace add lazyman-ian/claude-plugins
+# 添加 marketplace（一次性）
+claude plugins add-marketplace lazyman-ian --github lazyman-ian/claude-plugins
 
-# 2. 安装插件
-/plugin install ios-swift-plugin@lazyman-ian
+# 安装插件
+claude plugins add ios-swift-plugin@lazyman-ian
 ```
 
 **方式二：本地开发**
 
 ```bash
-# 克隆仓库
-git clone https://github.com/lazyman-ian/ios-swift-plugin.git
-
-# 添加为本地 marketplace
-/plugin marketplace add ./ios-swift-plugin
-
-# 安装
-/plugin install ios-swift-plugin@ios-swift-plugin
+claude plugins add /path/to/ios-swift-plugin
 ```
 
 ### 验证安装
