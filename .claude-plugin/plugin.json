@@ -17,5 +17,9 @@
     "widgetkit",
     "performance",
     "testing"
-  ]
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "agents": "./agents/",
+  "hooks": "./hooks/hooks.json"
 }
