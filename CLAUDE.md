@@ -32,6 +32,12 @@ Valid fields:
 
 **Invalid fields**: `tools: [...]` (not supported)
 
+## Plugin Manifest Rules
+
+Auto-discovered (don't declare in plugin.json):
+- `agents/` directory
+- `hooks/hooks.json`
+
 ## Reference
 
 - dev-flow 插件作为模板参考: `lazyman-ian/dev-flow`
