@@ -11,11 +11,11 @@ allowed-tools: [mcp__apple-docs__choose_technology, mcp__apple-docs__search_symb
 | Component | Reference | Status |
 |-----------|-----------|--------|
 | UIButton | `references/button.md` | ✅ Complete |
-| UILabel | `references/label.md` | 📝 Basic |
-| UITableView | `references/tableview.md` | ⏳ TODO |
-| UICollectionView | `references/collectionview.md` | ⏳ TODO |
-| Auto Layout | `references/autolayout.md` | ⏳ TODO |
-| UIStackView | `references/stackview.md` | ⏳ TODO |
+| UILabel | `references/label.md` | ✅ Complete |
+| UITableView | `references/tableview.md` | ✅ Complete |
+| UICollectionView | `references/collectionview.md` | ✅ Complete |
+| Auto Layout | `references/autolayout.md` | ✅ Complete |
+| UIStackView | `references/stackview.md` | ✅ Complete |
 
 ## Instructions
 

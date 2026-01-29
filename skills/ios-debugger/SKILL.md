@@ -6,6 +6,12 @@ allowed-tools: [Bash, Read, Glob, mcp__XcodeBuildMCP__*]
 
 # iOS Debugger Agent
 
+## References
+
+| Topic | File |
+|-------|------|
+| Complete workflow guide | `references/simulator-workflow.md` |
+
 ## Overview
 Use XcodeBuildMCP to build and run the current project scheme on a booted iOS simulator, interact with the UI, and capture logs. Prefer the MCP tools for simulator control, logs, and view inspection.
 
