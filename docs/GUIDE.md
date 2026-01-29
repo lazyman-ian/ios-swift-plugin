@@ -73,7 +73,7 @@ claude plugins add /path/to/ios-swift-plugin
 
 **Apple Documentation MCP（推荐）**
 
-为 `/ios-api-helper` 提供 Apple 官方文档查询。
+为 `/ios-api-helper` 提供 Symbol/API 精准查询。
 
 ```bash
 # 安装
@@ -84,7 +84,23 @@ npm install -g @anthropic/apple-docs-mcp
   "mcpServers": {
     "apple-docs": {
       "command": "npx",
-      "args": ["-y", "@anthropic/apple-docs-mcp"]
+      "args": ["-y", "apple-doc-mcp-server@latest"]
+    }
+  }
+}
+```
+
+**Sosumi MCP（HIG 指南）**
+
+为 `/ios-api-helper` 提供完整文档页面和 Human Interface Guidelines。
+
+```json
+// 在 ~/.claude/settings.json 中配置
+{
+  "mcpServers": {
+    "sosumi": {
+      "type": "http",
+      "url": "https://sosumi.ai/mcp"
     }
   }
 }
@@ -111,7 +127,8 @@ npm install -g @anthropic/xcodebuild-mcp
 
 | MCP | 用途 | 相关 Skill |
 |-----|------|-----------|
-| apple-docs | Apple 文档查询 | ios-api-helper, ios-ui-docs |
+| apple-docs | Symbol/API 精准查询 | ios-api-helper, ios-ui-docs |
+| sosumi | 完整文档、HIG 指南 | ios-api-helper |
 | XcodeBuildMCP | 模拟器控制 | ios-debugger |
 
 ### 5 分钟上手
@@ -273,7 +290,12 @@ Apple 文档查询、iOS 实现指南。
 
 **触发词**: iOS API, how to implement, SwiftUI pattern, Apple docs, 如何实现, 什么API
 
-**集成**: 配合 `apple-docs` MCP 使用效果最佳。
+**集成 MCP**:
+
+| MCP | 用途 |
+|-----|------|
+| `apple-docs` | Symbol/API 精准查询 |
+| `sosumi` | 完整文档页面、HIG 指南 |
 
 ### ios-debugger - 调试专家
 

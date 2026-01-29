@@ -203,8 +203,9 @@ ios-swift-plugin/
 
 | MCP | Purpose | Install |
 |-----|---------|---------|
-| `apple-docs` | Apple documentation lookup | `npm install -g @anthropic/apple-docs-mcp` |
-| `XcodeBuildMCP` | Simulator control for `/ios-debugger` | `npm install -g @anthropic/xcodebuild-mcp` |
+| `apple-docs` | Symbol/API lookup | `npx apple-doc-mcp-server@latest` |
+| `sosumi` | Full docs, HIG guidelines | HTTP: `https://sosumi.ai/mcp` |
+| `XcodeBuildMCP` | Simulator control | `npm install -g @anthropic/xcodebuild-mcp` |
 
 See [GUIDE.md](./docs/GUIDE.md#可选依赖) for configuration details.
 
