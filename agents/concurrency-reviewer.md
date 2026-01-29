@@ -1,7 +1,7 @@
 ---
 name: concurrency-reviewer
 description: Review Swift files for concurrency issues, Swift 6 compatibility, and thread-safety patterns. Triggers on "concurrency review", "check async", "Swift 6 issues", "并发检查", "async 问题".
-model: sonnet
+model: opus
 color: yellow
 ---
 
