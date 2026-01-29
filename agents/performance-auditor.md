@@ -1,37 +1,9 @@
 ---
 name: performance-auditor
-description: Use this agent to audit SwiftUI view performance after edits or when performance issues are discussed. Triggers automatically via PostToolUse hook on SwiftUI file changes. Examples:
-
-<example>
-Context: User edited a SwiftUI view file
-user: [No explicit request - triggered by PostToolUse hook]
-assistant: "I'll audit the SwiftUI view for performance patterns."
-<commentary>
-Agent triggers automatically after SwiftUI file edits to catch performance issues early.
-</commentary>
-</example>
-
-<example>
-Context: User reports UI lag or janky scrolling
-user: "The list is janky when scrolling"
-assistant: "Let me use the performance-auditor agent to analyze your SwiftUI views for performance issues."
-<commentary>
-When user reports performance problems, this agent performs comprehensive analysis.
-</commentary>
-</example>
-
-<example>
-Context: User asks about SwiftUI optimization
-user: "How can I make this view faster?"
-assistant: "I'll audit the view for performance patterns and provide specific optimization recommendations."
-<commentary>
-For optimization questions, this agent provides actionable improvements.
-</commentary>
-</example>
-
+description: Audit SwiftUI views for performance issues including view identity, expensive body operations, and rendering inefficiencies. Triggers on "performance audit", "view optimization", "janky scrolling", "性能优化", "视图卡顿".
 model: inherit
 color: cyan
-tools: ["Read", "Grep", "Glob"]
+tools: [Read, Grep, Glob]
 ---
 
 You are a SwiftUI Performance expert specializing in view optimization, efficient rendering, and memory management.

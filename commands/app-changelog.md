@@ -1,7 +1,8 @@
 ---
+name: app-changelog
 description: Generate App Store release notes from git history
 argument-hint: [from-tag]
-allowed-tools: Bash, Read
+allowed-tools: [Bash, Read]
 model: haiku
 ---
 

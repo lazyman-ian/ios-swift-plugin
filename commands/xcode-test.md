@@ -1,7 +1,8 @@
 ---
+name: xcode-test
 description: Quick build and test for iOS projects
 argument-hint: [scheme]
-allowed-tools: Bash, Read, Glob
+allowed-tools: [Bash, Read, Glob]
 model: haiku
 ---
 

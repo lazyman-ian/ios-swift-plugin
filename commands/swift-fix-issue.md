@@ -1,7 +1,8 @@
 ---
+name: swift-fix-issue
 description: End-to-end GitHub issue resolution for Swift projects
 argument-hint: <issue-number>
-allowed-tools: Bash, Read, Edit, Write, Glob, Grep
+allowed-tools: [Bash, Read, Edit, Write, Glob, Grep]
 ---
 
 # Swift Issue Fix Workflow
