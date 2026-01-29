@@ -197,9 +197,16 @@ ios-swift-plugin/
 
 ## Prerequisites
 
-- Xcode (for build/test commands)
-- Apple Documentation MCP (`apple-docs`) - optional but recommended
-- XcodeBuildMCP (`xclaude-plugin`) - optional, for simulator control
+- **Xcode** - Required for build/test commands
+
+### Optional MCP Servers
+
+| MCP | Purpose | Install |
+|-----|---------|---------|
+| `apple-docs` | Apple documentation lookup | `npm install -g @anthropic/apple-docs-mcp` |
+| `XcodeBuildMCP` | Simulator control for `/ios-debugger` | `npm install -g @anthropic/xcodebuild-mcp` |
+
+See [GUIDE.md](./docs/GUIDE.md#可选依赖) for configuration details.
 
 ## ConcurrencyGuard Setup
 

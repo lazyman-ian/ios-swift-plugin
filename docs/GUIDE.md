@@ -67,6 +67,53 @@ claude plugins add /path/to/ios-swift-plugin
 
 看到 skill 加载即表示安装成功。
 
+### 可选依赖
+
+以下 MCP 服务器可增强插件功能：
+
+**Apple Documentation MCP（推荐）**
+
+为 `/ios-api-helper` 提供 Apple 官方文档查询。
+
+```bash
+# 安装
+npm install -g @anthropic/apple-docs-mcp
+
+# 或在 ~/.claude/settings.json 中配置
+{
+  "mcpServers": {
+    "apple-docs": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/apple-docs-mcp"]
+    }
+  }
+}
+```
+
+**XcodeBuildMCP（模拟器调试）**
+
+为 `/ios-debugger` 提供模拟器控制、UI 交互、截图和日志捕获。
+
+```bash
+# 安装 - 参考 https://github.com/anthropics/xcodebuild-mcp
+npm install -g @anthropic/xcodebuild-mcp
+
+# 或在 ~/.claude/settings.json 中配置
+{
+  "mcpServers": {
+    "XcodeBuildMCP": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/xcodebuild-mcp"]
+    }
+  }
+}
+```
+
+| MCP | 用途 | 相关 Skill |
+|-----|------|-----------|
+| apple-docs | Apple 文档查询 | ios-api-helper, ios-ui-docs |
+| XcodeBuildMCP | 模拟器控制 | ios-debugger |
+
 ### 5 分钟上手
 
 ```bash
