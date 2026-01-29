@@ -1,0 +1,29 @@
+{
+  "description": "iOS/Swift development hooks for concurrency validation and performance auditing",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/concurrency-guard.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "If the edited file is a Swift file (.swift extension), briefly check for obvious concurrency issues: Task.detached usage, Task{} in init, missing @MainActor on UI code. If no Swift file was edited or no issues found, respond with just 'OK'. If issues found, briefly note them.",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
