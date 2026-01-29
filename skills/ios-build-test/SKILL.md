@@ -6,6 +6,14 @@ allowed-tools: [Bash, Read, Grep, mcp__apple-docs__*]
 
 # iOS Build & Test (Token Optimized)
 
+## When to Use
+
+- Building Xcode projects (`xcodebuild build`)
+- Running unit tests (`xcodebuild test`)
+- Verifying build status before commit
+- Iterating on test failures until all pass
+- Need token-efficient output (use `-quiet`, `grep`)
+
 ## 核心原则
 
 | 策略 | Token 节省 | 说明 |
