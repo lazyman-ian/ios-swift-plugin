@@ -1,7 +1,7 @@
 ---
 description: Scan Swift files for concurrency violations
 argument-hint: [path]
-allowed-tools: Bash, Read, Grep, Glob
+allowed-tools: [Bash, Read, Grep, Glob]
 ---
 
 # Swift Concurrency Audit
