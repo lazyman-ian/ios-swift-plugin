@@ -2,7 +2,7 @@
 # ConcurrencyGuard PreToolUse Hook
 # Blocks edits that introduce Swift concurrency anti-patterns
 
-set -euo pipefail
+set -eo pipefail
 
 # Read input from stdin
 input=$(cat)
@@ -19,7 +19,7 @@ if [[ ! "$file_path" =~ \.swift$ ]]; then
 fi
 
 # Check if ConcurrencyGuard binary exists
-GUARD_BIN="${CLAUDE_PLUGIN_ROOT}/tools/ConcurrencyGuard/.build/release/ConcurrencyGuard"
+GUARD_BIN="${CLAUDE_PLUGIN_ROOT:-}/tools/ConcurrencyGuard/.build/release/ConcurrencyGuard"
 
 if [[ -x "$GUARD_BIN" ]]; then
     # Use SwiftSyntax-based analyzer
@@ -34,22 +34,22 @@ else
     violations=""
 
     # CC-CONC-001: Task.detached
-    if echo "$new_content" | grep -q "Task\.detached"; then
+    if echo "$new_content" | grep -q "Task\.detached" 2>/dev/null || false; then
         violations="${violations}CC-CONC-001: Task.detached usage (prefer structured concurrency); "
     fi
 
     # CC-CONC-002: Task{} in init
-    if echo "$new_content" | grep -E "init\s*\([^)]*\)\s*\{[^}]*Task\s*\{" > /dev/null 2>&1; then
+    if echo "$new_content" | grep -E "init\s*\([^)]*\)\s*\{[^}]*Task\s*\{" > /dev/null 2>&1 || false; then
         violations="${violations}CC-CONC-002: Task in initializer (causes side effects); "
     fi
 
     # CC-CONC-003: Task in body/layoutSubviews (simplified check)
-    if echo "$new_content" | grep -E "(var body|func layoutSubviews)[^}]*Task\s*\{" > /dev/null 2>&1; then
+    if echo "$new_content" | grep -E "(var body|func layoutSubviews)[^}]*Task\s*\{" > /dev/null 2>&1 || false; then
         violations="${violations}CC-CONC-003: Task in render path (blocks UI); "
     fi
 
     # CC-CONC-008: .background with for await
-    if echo "$new_content" | grep -E "\.background.*for await|for await.*\.background" > /dev/null 2>&1; then
+    if echo "$new_content" | grep -E "\.background.*for await|for await.*\.background" > /dev/null 2>&1 || false; then
         violations="${violations}CC-CONC-008: Background priority with for await (priority inversion); "
     fi
 
