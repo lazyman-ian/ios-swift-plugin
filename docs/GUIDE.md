@@ -43,7 +43,7 @@
 
 ```bash
 # 添加 marketplace（一次性）
-claude plugins add-marketplace lazyman-ian --github lazyman-ian/claude-plugins
+claude marketplace add lazyman-ian https://github.com/lazyman-ian/claude-plugins.git
 
 # 安装插件
 claude plugins add ios-swift-plugin@lazyman-ian
