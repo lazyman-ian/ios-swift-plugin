@@ -51,18 +51,19 @@
 
 ### From Marketplace
 
-```bash
+```
 # Add marketplace (one-time)
-claude marketplace add lazyman-ian https://github.com/lazyman-ian/claude-plugins.git
+/plugin marketplace add lazyman-ian/claude-plugins
 
 # Install plugin
-claude plugins add ios-swift-plugin@lazyman-ian
+/plugin install ios-swift-plugin@lazyman-ian
 ```
 
 ### From Local Directory
 
 ```bash
-claude plugins add /path/to/ios-swift-plugin
+# Development mode
+claude --plugin-dir /path/to/ios-swift-plugin
 ```
 
 See [INSTALL.md](../INSTALL.md) for detailed installation guide including submodule handling.
