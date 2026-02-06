@@ -1,6 +1,7 @@
 ---
 name: swiftui-expert
 description: Writes, reviews, and improves SwiftUI code following best practices for state management, view composition, performance, and modern APIs. This skill should be used when building new SwiftUI features, refactoring existing views, reviewing code quality, or adopting modern SwiftUI patterns. Triggers on "SwiftUI", "view composition", "state management", "@Observable", "@State", "NavigationStack", "TabView", "sheet", "refactor view", "SwiftUI最佳实践", "视图优化", "界面设计", "创建视图".
+memory: project
 allowed-tools: [Read, Glob, Grep, Edit, Write, mcp__apple-docs__*]
 ---
 

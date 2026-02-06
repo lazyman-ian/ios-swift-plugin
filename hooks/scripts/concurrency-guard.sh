@@ -2,21 +2,22 @@
 # ConcurrencyGuard PreToolUse Hook
 # Blocks edits that introduce Swift concurrency anti-patterns
 
-set -eo pipefail
+set -o pipefail
 
 # Read input from stdin
 input=$(cat)
 
 # Extract tool info
-tool_name=$(echo "$input" | jq -r '.tool_name // ""')
-file_path=$(echo "$input" | jq -r '.tool_input.file_path // ""')
-new_content=$(echo "$input" | jq -r '.tool_input.content // .tool_input.new_string // ""')
+tool_name=$(echo "$input" | jq -r '.tool_name // ""' 2>/dev/null || echo "")
+file_path=$(echo "$input" | jq -r '.tool_input.file_path // ""' 2>/dev/null || echo "")
 
-# Only check Swift files
+# Only check Swift files (early exit before parsing content)
 if [[ ! "$file_path" =~ \.swift$ ]]; then
     echo '{"decision": "allow"}'
     exit 0
 fi
+
+new_content=$(echo "$input" | jq -r '.tool_input.content // .tool_input.new_string // ""' 2>/dev/null || echo "")
 
 # Check if ConcurrencyGuard binary exists
 GUARD_BIN="${CLAUDE_PLUGIN_ROOT:-}/tools/ConcurrencyGuard/.build/release/ConcurrencyGuard"

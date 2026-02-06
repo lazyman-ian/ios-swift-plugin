@@ -1,6 +1,7 @@
 ---
 name: ios-build-test
 description: Provides token-efficient iOS build and test commands. This skill should be used when building Xcode projects, running unit tests, checking build status, or iterating on test failures until they pass. Triggers on "build", "test", "xcodebuild", "compile", "verify build", "check if it builds", "does this compile", "make sure it builds", "run tests", "fix tests", "构建", "编译", "测试", "运行测试", "测试通过", "修复测试", "跑测试", "直到通过", "验证构建", "能编译吗".
+memory: project
 allowed-tools: [Bash, Read, Grep, mcp__apple-docs__*]
 ---
 

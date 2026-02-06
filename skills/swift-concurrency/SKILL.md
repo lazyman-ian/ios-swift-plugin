@@ -1,6 +1,7 @@
 ---
 name: swift-concurrency
 description: Provides expert guidance on Swift Concurrency patterns, implementation, and issue remediation. This skill should be used when working with async/await, actors, tasks, Sendable conformance, fixing concurrency compiler errors, or migrating to Swift 6. Triggers on "Swift Concurrency", "async/await", "actor", "@MainActor", "Sendable", "data race", "concurrency", "Swift 6", "并发", "线程安全", "异步", "Swift 并发".
+memory: project
 allowed-tools: [Read, Glob, Grep, Edit, mcp__apple-docs__*]
 ---
 
